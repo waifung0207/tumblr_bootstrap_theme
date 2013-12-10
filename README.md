@@ -3,9 +3,13 @@ Tumblr Bootstrap Theme
 
 Tumblr theme based on Bootstrap 3 framework and integrated with Bootswatch themes
 
+Credits to these websites:
+
+* Tumblr: http://tumblr.com/
 * Bootstrap 3: http://getbootstrap.com/
 * Bootswatch themes: http://bootswatch.com/
-* Font-awesome 4: http://www.fontawesome.io/
+* Font-awesome 4: http://www.fontawesome.io/ (for icon fonts)
+* Subtle Patterns: http://subtlepatterns.com/ (for background images in demo link)
 
 Demo can be checked from here: http://bootstrap-theme-demo.tumblr.com/
 
@@ -24,7 +28,12 @@ This theme is tuned for following post types:
 * Audio
 * Video
 
-Responsive design is included thanks to the Bootstrap framework :)
+Also for following components on the Tumblr blog:
+
+* Tags
+* Pagination
+* Search box
+* Responsive design (thanks to Bootstrap's grid structure)
 
 
 Installation
