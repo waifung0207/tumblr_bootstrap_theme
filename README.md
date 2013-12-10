@@ -58,3 +58,4 @@ You can easily change the values of:
 * Background (image or color)
 * Disqus
 * Social icons: Facebook, Google+, Twitter, YouTube, Flickr, Foursquare, GitHub, Vimeo
+* Google Analytics
