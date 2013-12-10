@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=720, user-scalable=yes"/>
+    <meta name="description" content="{MetaDescription}"/>
+    <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+    
+    <!-- DEFAULT COLORS -->
+    <meta name="image:Background" content="">
+    <meta name="color:Background Color" content="#ffffff"/>
+    
+    <!-- Custom values -->
+    <meta name="text:Bootswatch Theme" content="" />
+    <meta name="text:Disqus Shortname" content="" />
+    <meta name="text:Facebook Username" content=""/>
+    <meta name="text:GooglePlus Usernumber" content=""/>
+    <meta name="text:Twitter Username" content=""/>
+    <meta name="text:YouTube Username" content=""/>
+    <meta name="text:Flickr Username" content=""/>
+    <meta name="text:Foursquare Username" content=""/>
+    <meta name="text:GitHub Username" content=""/>
+    <meta name="text:Vimeo Username" content=""/>
+    
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+    <link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+    
+    <!-- CSS / JS via CDN -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    {block:IfBootswatchTheme}
+    <link rel="stylesheet" href="//bootswatch.com/{text:Bootswatch Theme}/bootstrap.min.css">
+    {/block:IfBootswatchTheme}
+
+    <style type="text/css" media="screen">  
+        {CustomCSS}
+        
+        
+        body {
+            {block:IfBackgroundImage}
+            background: url('{image:Background}');
+            {/block:IfBackgroundImage}
+            background-color: {color:Background Color};
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main" class="container">
+    
+        <div class="jumbotron">
+            <h1><a href="/">{Title}</a></h1>
+            <p class="lead">{Description}</p>
+            
+            <!-- Social networks -->
+            <div class="social">
+            
+                <!-- Facebook -->
+                {block:IfFacebookUsername}
+                <a href="http://facebook.com/{text:Facebook Username}" title="Facebook" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a>
+                {/block:IfFacebookUsername}
+                
+                <!-- Google Plus -->
+                {block:IfGooglePlusUsernumber}
+                <a href="https://plus.google.com/u/1/{text:GooglePlus Usernumber}" title="Google Plus" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x fa-inverse"></i></span></a>
+                {/block:IfGooglePlusUsernumber}
+                
+                <!-- Twitter -->
+                {block:IfTwitterUsername}
+                <a href="http://twitter.com/{text:Twitter Username}" title="Twitter" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a>
+                {/block:IfTwitterUsername}
+                
+                <!-- YouTube -->
+                {block:IfYouTubeUsername}
+                <a href="http://youtube.com/user/{text:YouTube Username}" title="YouTube" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-youtube fa-stack-1x fa-inverse"></i></span></a>
+                {/block:IfYouTubeUsername}
+                
+                <!-- Flickr -->
+                {block:IfFlickrUsername}
+                <a href="http://flickr.com/{text:Flickr Username}" title="Flickr" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-flickr fa-stack-1x fa-inverse"></i></span></a>
+                {/block:IfFlickrUsername}
+                
+                <!-- Foursquare -->
+                {block:IfFoursquareUsername}
+                <a href="https://foursquare.com/{text:Foursquare Username}" title="Foursquare" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-foursquare fa-stack-1x fa-inverse"></i></span></a>
+                {block:IfFoursquareUsername}
+                
+                <!-- Vimeo -->
+                {block:IfVimeoUsername}
+                <a href="http://vimeo.com/{text:Vimeo Username}" title="Vimeo" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-vimeo-square fa-stack-1x fa-inverse"></i></span></a>
+                {/block:IfVimeoUsername}
+                
+                <!-- Github -->
+                {block:IfGitHubUsername}
+                <a href="https://github.com/{text:GitHub Username}" title="GitHub" target="{Target}"><span class="fa-stack fa-fw"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github-alt fa-stack-1x fa-inverse"></i></span></a>
+                {/block:IfGitHubUsername}
+            </div>
+        </div>
+        
+        <!-- Header -->
+        <div class="row">
+            <br/>
+        </div>
+        
+        <!-- Searching criteria -->
+        <div class="row">
+            <div class="col-md-2">&nbsp;</div>
+            <div class="col-md-10">
+                <p class="lead">
+                {block:DayPage}
+                    {lang:Viewing everything posted on Month DayOfMonth Year}
+                {/block:DayPage}
+                
+                {block:TagPage}
+                    {lang:Showing TagResultCount posts tagged Tag 3}
+                {/block:TagPage}
+                
+                {block:SearchPage}
+                    {block:SearchResults}
+                        {lang:Showing SearchResultCount results for SearchQuery 2}
+                    {/block:SearchResults}
+                    
+                    {block:NoSearchResults}
+                        {lang:No search results for SearchQuery}
+                    {block:NoSearchResults}
+                {/block:SearchPage}
+                </p>
+            </div>
+        </div>
+        
+        <!-- Post Content -->
+        <div id="posts" class="row">
+            
+        <!-- Posts List -->
+        {block:Posts}
+        <div class="post">
+            
+            <!-- New / Same Day -->
+            {block:NewDayDate}
+            <div class="col-md-2">
+                <a class="btn btn-info btn-block" href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}">
+                    {ShortMonth} {DayOfMonthWithZero}, {Year}
+                </a><br/>
+            </div>
+            {/block:NewDayDate}
+            {block:SameDayDate}
+            <div class="col-md-2 text-center">&nbsp;</div>
+            {/block:SameDayDate}
+            
+            <!-- Posts -->
+            <div class="col-md-10">
+            <div class="panel panel-default">
+            
+                <!-- Post Heading -->
+                <div class="panel-heading">
+                    <!-- Icon -->
+                    {block:Text}<i class="fa fa-fw fa-edit"></i>&nbsp;{block:Text}
+                    {block:Photo}<i class="fa fa-fw fa-picture-o"></i>&nbsp;{block:Photo}
+                    {block:Panorama}<i class="fa fa-fw fa-camera"></i>&nbsp;{block:Panorama}
+                    {block:PhotoSet}<i class="fa fa-fw fa-picture-o"></i>&nbsp;{block:PhotoSet}
+                    {block:Quote}<i class="fa fa-fw fa-quote-left"></i>&nbsp;{block:Quote}
+                    {block:Link}<i class="fa fa-fw fa-link"></i>&nbsp;{block:Link}
+                    {block:Chat}<i class="fa fa-fw fa-comments"></i>&nbsp;{block:Chat}
+                    {block:Audio}<i class="fa fa-fw fa-music"></i>&nbsp;{/block:Audio}
+                    {block:Video}<i class="fa fa-fw fa-video-camera"></i>&nbsp;{block:Video}
+                    
+                    <!-- Post Date -->
+                    {block:Date}
+                        <span>{lang:Posted at FormattedTime} {lang:By PostAuthorName 2}</span>
+                    {/block:Date}
+                    
+                    <!-- Permalink -->
+                    <span class="pull-right small">
+                        <a href="{Permalink}"><i class="fa fa-fw fa-link"></i> {lang:Permalink}</a>
+                    </span>
+                </div>
+                
+                <!-- Post Content (for different post types) -->
+                <div class="panel-body">
+                
+                    <!-- Text Post -->
+                    {block:Text}
+                    <div class="text">
+                        {block:Title}
+                        <h3>{Title}</h3>
+                        {/block:Title}
+                        <p>{Body}</p>
+                    </div>
+                    {/block:Text}
+                    
+                    <!-- Photo Post -->
+                    {block:Photo}
+                    <div class="row">
+                        
+                        <div class="col-md-8">
+                            {LinkOpenTag}
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                            {LinkCloseTag}
+                            
+                            {block:Caption}
+                            <p>{Caption}</p>
+                            {/block:Caption}
+                            
+                            {block:Exif}
+                            <span class="text-muted small">
+                                {block:Camera}
+                                Camera: {Camera}&nbsp;&nbsp;
+                                {/block:Camera}
+                                {block:Aperture}
+                                Aperture: {Aperture}&nbsp;&nbsp;
+                                {/block:Aperture}
+                                {block:Exposure}
+                                Exposure: {Exposure}&nbsp;&nbsp;
+                                {/block:Exposure}
+                                {block:FocalLength}
+                                FocalLength: {FocalLength}&nbsp;&nbsp;
+                                {/block:FocalLength}
+                            </span>
+                            {/block:Exif}
+                        </div>
+                        
+                        {block:Exif}
+                        <div class="col-md-4 hidden-xs hidden-sm">
+                            <ul class="list-group">
+                                {block:Camera}
+                                <li class="list-group-item">
+                                  <span class="pull-right">{Camera}</span>
+                                  <span class="text-muted">Camera</span>
+                                </li>
+                                {/block:Camera}
+                                {block:Aperture}
+                                <li class="list-group-item">
+                                  <span class="pull-right">{Aperture}</span>
+                                  <span class="text-muted">Aperture</span>
+                                </li>
+                                {/block:Aperture}
+                                {block:Exposure}
+                                <li class="list-group-item">
+                                  <span class="pull-right">{Exposure}</span>
+                                  <span class="text-muted">Exposure</span>
+                                </li>
+                                {/block:Exposure}
+                                {block:FocalLength}
+                                <li class="list-group-item">
+                                  <span class="pull-right">{FocalLength}</span>
+                                  <span class="text-muted">Focal Length</span>
+                                </li>
+                                {/block:FocalLength}
+                            </ul>
+                        </div>
+                        {/block:Exif}
+                        
+                    </div>
+                    {/block:Photo}
+                    
+                    <!-- Photoset Post -->
+                    {block:Photoset}
+                    <div class="photoset">
+                        {Photoset-500}
+                        {block:Caption}
+                        <p>{Caption}</p>
+                        {/block:Caption}
+                    </div>
+                    <!--
+                    <div class="row">
+                        {block:Photos}
+                        <div class="col-md-4">
+                        <img src="{PhotoURL-400}" width="100%" alt="{PhotoAlt}" class="img-rounded" />
+                        </div>
+                        {/block:Photos}
+                        {block:Caption}
+                            <p>{Caption}</p>
+                        {/block:Caption}
+                    </div>
+                    -->
+                    {/block:Photoset}
+                    
+                    <!-- Quote Post -->
+                    {block:Quote}
+                    <div class="quote">
+                        <blockquote>
+                            <p>{Quote}</p>
+                            {block:Source}<small>{Source}</small>{/block:Source}
+                        </blockquote>
+                    </div>
+                    {/block:Quote}
+                    
+                    <!-- Link Post -->
+                    {block:Link}
+                    <div class="link">
+                        <h3><a href="{URL}" target="{Target}">{Name}</a></h3>
+                        {block:Description}
+                        <p>{Description}</p>
+                        {/block:Description}
+                    </div>
+                    {/block:Link}
+                    
+                    <!-- Chat Post -->
+                    {block:Chat}
+                    <!--
+                    <div class="chat">
+                        {block:Title}<h3>{Title}</h3>{/block:Title}
+                        <ul>
+                            {block:Lines}
+                            <li class="{Alt}">
+                                {block:Label}<span class="who">{Label}</span>{/block:Label}
+                                {Line}
+                            </li>
+                            {/block:Lines}
+                        </ul>
+                    </div>
+                    -->
+                    <div class="chat list-group">
+                        {block:Lines}
+                        <div class="list-group-item {Alt}">
+                            <h4 class="list-group-item-heading">
+                                {block:Label}<strong>{Label}</strong>{/block:Label}
+                            </h4>
+                            <p class="list-group-item-text">
+                                {Line}
+                            </p>
+                        </div>
+                        {/block:Lines}
+                    </div>
+                    {/block:Chat}
+                    
+                    <!-- Audio Post -->
+                    {block:Audio}
+                    <div class="audio">
+                        <div class="player">
+                            <div class="play-count">{lang:Played PlayCount times}</div>
+                            {AudioPlayerBlack}              
+                        </div>
+                        {block:Caption}
+                        <p>{Caption}</p>
+                        {/block:Caption}
+                    </div>
+                    {/block:Audio}
+                    
+                    <!-- Video Post -->
+                    {block:Video}
+                    <div class="video">
+                        {Video-500}
+                        {block:Caption}
+                        <p>{Caption}</p>
+                        {/block:Caption}
+                    </div>
+                    {/block:Video}
+                    
+                    {block:RebloggedFrom}
+                    <span class="reblogged">({lang:Reblogged from ReblogParentName 2})</span>
+                    {/block:RebloggedFrom}
+                    
+                    
+                    <!-- Panel Footer -->
+                    <hr/>
+                    
+                    <!-- Noted and Comments -->
+                    <span class="pull-right small">
+                        {block:PostNotes}
+                            {NoteCountWithLabel}
+                        {/block:PostNotes}
+                        {block:IfDisqusShortname}
+                            <a class="dsq-comment-count" href="{Permalink}#disqus_thread">
+                                 {lang:Comments}
+                            </a>
+                        {/block:IfDisqusShortname}
+                    </span>
+                    
+                    <!-- Tags -->
+                    {block:HasTags}
+                        <i class="fa fa-fw fa-tag"></i>
+                        {block:Tags}
+                            <a href="{TagURL}" class="label label-primary">{Tag}</a>
+                            &nbsp;
+                        {/block:Tags} 
+                    {/block:HasTags}
+                    
+                    {block:PostNotes}
+                    <br/><br/>
+                    <div id="note-container">
+                        <h4>{lang:Notes}</h4>
+                        {PostNotes}
+                    </div>
+                    {/block:PostNotes}
+                    
+                    {block:IfDisqusShortname}
+                    {block:Permalink}
+                    <br/><br/><br/>
+                    <div id="disqus_thread"></div>
+                    <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+                    <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
+                    {/block:Permalink}
+                    {/block:IfDisqusShortname}
+                        
+                </div> <!-- end of .panel-body -->
+            
+            </div> <!-- end .panel -->
+            </div> <!-- end of .col-xs-11-->
+            
+        </div> <!-- end .post -->
+        {/block:Posts}
+        
+        <!-- Pagination -->
+        {block:Pagination}
+        <div class="row text-center">
+            <ul class="pagination">
+                
+                {block:PreviousPage}
+                    <li><a href="/page/1">
+                        <i class="fa fa-fw fa-angle-double-left"></i>
+                    </a></li>
+                    <li><a href="{PreviousPage}">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                    </a></li>
+                {/block:PreviousPage}
+    
+                {block:JumpPagination length="5"}
+                    {block:CurrentPage}
+                        <li class="active" class="disabled"><a href="#">{PageNumber}</a></li>
+                    {/block:CurrentPage}
+        
+                    {block:JumpPage}
+                        <li><a href="{URL}">{PageNumber}</a></li>
+                    {/block:JumpPage}
+                {/block:JumpPagination}
+    
+                {block:NextPage}
+                    <li><a href="{NextPage}">
+                    <i class="fa fa-fw fa-angle-right"></i>
+                    </a></li>
+                    <li><a href="{TotalPages}">
+                        <i class="fa fa-fw fa-angle-double-right"></i>
+                    </a></li>
+                {/block:NextPage}
+            
+            </ul>
+        </div>
+        {/block:Pagination}
+        
+        <!-- Footer -->
+        <div id="footer" class="footer">
+            <hr>
+        
+            <!-- Pages -->
+            <div class="pull-left">
+                {block:HasPages}
+                    {block:Pages}<a href="{URL}" class="btn btn-link">{Label}</a>{/block:Pages}
+                {/block:HasPages}
+                <a href="/archive" class="btn btn-link">{lang:Archive}</a>
+                <a href="/random" class="btn btn-link">{lang:Random}</a>
+                <a href="{RSS}" class="btn btn-link">{lang:RSS}</a>
+                {block:AskEnabled}
+                <a href="/ask" class="btn btn-link">{AskLabel}</a>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                <a href="/submit" class="btn btn-link">{SubmitLabel}</a>
+                {/block:SubmissionsEnabled}
+            </div>
+            
+            <!-- Search box -->
+            <div class="input-group pull-right">
+                <form id="searchbox" form action="/search" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="q" value="{SearchQuery}" />
+                    <span class="input-group-btn">
+                        <input type="submit" class="btn btn-default" value="{lang:Search}" />
+                    </span>
+                </div>
+                </form>
+            </div>
+        </div> <!-- end #footer -->
+        
+    </div> <!-- end #main -->
+    <br/>
+    
+    {block:IfDisqusShortname}
+    <!-- Disqus -->
+  <script type="text/javascript">
+  //<![CDATA[
+  (function() {
+      var links = document.getElementsByTagName('a');
+      var query = '?';
+      for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+          query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+      }
+      }
+      document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+  })();
+  //]]>
+  </script>
+  {/block:IfDisqusShortname}
+  </body>
+</html>
