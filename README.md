@@ -7,7 +7,7 @@ Tumblr theme based on Bootstrap 3 framework and integrated with Bootswatch theme
 * Bootswatch themes: http://bootswatch.com/
 * Font-awesome 4: http://www.fontawesome.io/
 
-Demo link to be added soon.
+Demo can be checked from here: http://bootstrap-theme-demo.tumblr.com/
 
 
 Features
