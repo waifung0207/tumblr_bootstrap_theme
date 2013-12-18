@@ -30,24 +30,21 @@
     <link rel="apple-touch-icon" href="{PortraitURL-128}"/>
     
     <!-- CSS / JS via CDN -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     {block:IfBootswatchTheme}
-    <link rel="stylesheet" href="//bootswatch.com/{text:Bootswatch Theme}/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/{text:Bootswatch Theme}/bootstrap.min.css">
     {/block:IfBootswatchTheme}
 
     <style type="text/css" media="screen">  
         {CustomCSS}
-        
-        
+
         body {
             {block:IfBackgroundImage}
             background: url('{image:Background}');
             {/block:IfBackgroundImage}
             background-color: {color:Background Color};
         }
-        
     </style>
 </head>
 <body>
